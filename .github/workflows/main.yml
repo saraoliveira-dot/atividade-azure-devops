@@ -43,14 +43,10 @@ jobs:
           name: node-app
           path: ./app
 
-      # DICA PARA OS ALUNOS:
-      # O nome do app precisa ser preenchido corretamente abaixo.
-      # Vocês precisarão configurar o secret AZURE_WEBAPP_PUBLISH_PROFILE
-      # ou usar credenciais de login no Azure (azure/login@v1)
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: '<nome-do-seu-webapp>'
+          app-name: 'app-seriefilmes'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./app
